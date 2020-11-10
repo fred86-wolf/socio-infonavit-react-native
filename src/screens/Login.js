@@ -20,7 +20,7 @@ export default Login = ({navigation}) => {
             const accessToken = await saveItem(ACCESS_TOKEN, headers.authorization);
             navigation.navigate('Home');
         } catch (error) {
-            console.error(error);
+            selectComponent('error');
         }
     }
     const selectComponent = (key) => {
@@ -31,6 +31,10 @@ export default Login = ({navigation}) => {
                 break;
             case 'register':
                 setRenderComponent(<Text>Se enviara un correo con tus datos de Registro</Text>);
+                setShowModal(true);
+                break;
+            case 'error':
+                setRenderComponent(<Text>Usuario y Contraseña Incorrectos</Text>);
                 setShowModal(true);
                 break;
             default:

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import {View,Image, Text,TouchableOpacity,StyleSheet,SafeAreaView} from 'react-native';
+import {View,Image, Text,TouchableOpacity,StyleSheet,SafeAreaView, FlatList} from 'react-native';
 import {Icon} from 'react-native-elements';
 import axios from 'axios';
 import { ACCESS_TOKEN, LOGO, ROJO,URL_B,URL_W } from '../consts';
@@ -70,7 +70,7 @@ export default Home  = ({navigation}) => {
             renderItem={({ item }) => (
                 <View>
                     <View>
-                        <Image style={styles.carouselImage} source={{uri:item.vector_full_path}} />
+                        <Image style={{ width: 50,height: 50}} source={{uri:item.vector_full_path}} />
                     </View>
                     <View>
                         <Text>
