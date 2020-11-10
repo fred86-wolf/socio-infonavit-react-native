@@ -72,7 +72,7 @@ export default Login = ({navigation}) => {
                     <TouchableOpacity onPress={() => selectComponent('password')}>
                         <Text style={styles.textPassword}>Olvidé mi contraseña</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity disabled={false} style={[styles.btnLogin, {backgroundColor:backColor}]} onPress={handleSubmit}>
+                    <TouchableOpacity disabled={isValid} style={[styles.btnLogin, {backgroundColor:backColor}]} onPress={handleSubmit}>
                         <Text style={styles.textLogin}>Entrar</Text>
                     </TouchableOpacity>
                 </View>
